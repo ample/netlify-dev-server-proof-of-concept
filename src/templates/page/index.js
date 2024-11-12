@@ -2,12 +2,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-const FlexiblePage = ({
-  data: {
-    page: { title },
-  },
-}) => {
-  return <h1>{title}</h1>;
+const FlexiblePage = (props) => {
+  return <pre>{JSON.stringify(props.data, null, 2)}</pre>;
 };
 
 export const query = graphql`

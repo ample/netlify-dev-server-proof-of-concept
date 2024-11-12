@@ -22,8 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `);
 
   const { pages } = results.data;
-  reporter.info(`Creating ${pages.edges.length} page nodes for ${process.env.GATSBY_SITE_THEME || "default"} theme`);
-
+  reporter.info(`Creating ${pages.edges.length} page nodes`);
   pages.edges.map(({ node }) => {
     reporter.info(`Creating page: ${node.slug}`);
     createPage({
@@ -31,9 +30,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve(`./src/templates/page/index.js`),
       context: {
         id: node.id,
-        title: node.title,
-        meta_data: node.meta_data,
-        siteTheme: process.env.GATSBY_SITE_THEME || "default",
       },
     });
   });
