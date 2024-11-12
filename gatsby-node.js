@@ -7,14 +7,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       pages: allContentfulPage {
         edges {
           node {
-            __typename
             id
-            title
             slug
-            meta_data {
-              content
-              name
-            }
           }
         }
       }
