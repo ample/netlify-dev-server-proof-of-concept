@@ -1,0 +1,16 @@
+# Do not add configurations that will
+# break either Gatsby builds or Storybook builds
+
+# Set the publish directory and plugins in Netlify UI,
+# adding them here will break the storybook builds
+
+[build]
+  functions = "functions"
+
+[dev]
+  framework = "gatsby"
+  targetPort = 8000
+  port = 8888
+  command = "gatsby develop -- --trace-warnings"
+
+
